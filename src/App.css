@@ -1,16 +1,72 @@
 *{
-  border: 1px dotted red;
-  --bone: #F5EDCE;
-  --blue: #89C4E1;
-  --purple: #58287F;
-  --brown: #1A0000;
+  /*------color-------*/
+  /*fuente: https://colorhunt.co/palette/f9f5ebe4dccfea5455002b5b*/
+  --bone: #F9F5EB;
+  --dark-bone: #E4DCCF;
+  --coral: #EA5455;
+  --blue: #002B5B;
+  /*----font-size------*/
+  --sm:1rem;
+  --md:1.5rem;
+  --lg:2rem;
+
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+  align-self: center;
+  font-size: var(--lg);
+  color: var(--blue)
 }
 
 body{
-max-width: 100vw;
-max-height: 100vh;
-background-color: var(--brown);
+background-color: var(--blue);
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
 }
 
-.App {
+.main-content{
+  border: 3px dashed var(--coral);
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+  background-color: var(--dark-bone);
+  width: min(70vw - 5px, 750px);
+  height: 90vh;
+  margin-inline: auto;
+}
+
+#register-form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.labeled-input{
+  align-self: center;
+  width: 80%;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.register-input{
+  width: 100%;
+  height: 30px;
+  border: 2px solid var(--coral);
+  border-radius: 5px;
+}
+
+.register-button{
+  align-self: center;
+  width: 50%;
+  height: 5%;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--coral);
+  font-size: var(--md);
 }
