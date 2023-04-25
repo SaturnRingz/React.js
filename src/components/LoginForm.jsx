@@ -1,5 +1,5 @@
 import LabeledInput from "./LabeledInput";
-
+import { Link } from "react-router-dom";
 function LoginForm(){
 return(
 <>
@@ -14,10 +14,11 @@ return(
             title="Contraseña"
             type="password"
         />
-        <a
-        id="register-hyperlink" 
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Haz click aquí para registrarte</a>
-        <button className="login-button">Iniciar sesión</button>
+        <Link id="register-hyperlink" to="/register">Haz click aquí para registrarte</Link>
+        
+        <button className="login-button">
+        <a href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-4">Iniciar sesión</a>
+        </button>
     </form>
 </>)
 }
