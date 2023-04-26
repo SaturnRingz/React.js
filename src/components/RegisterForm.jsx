@@ -3,6 +3,7 @@ import LabeledInput from "./LabeledInput";
 function RegisterForm(){
     return (
     <>
+    <div className="register-bubble">
     <form id="register-form">
     <h1>Formulario de registro</h1>
         <LabeledInput   
@@ -31,6 +32,7 @@ function RegisterForm(){
         id="re-pwd"/>
         <input type="submit" value="Registrarse" className="register-button"/>
     </form>
+    </div>
     </>
     )
 }
