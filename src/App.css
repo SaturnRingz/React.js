@@ -16,7 +16,8 @@
 h1{
   align-self: center;
   font-size: var(--lg);
-  color: var(--blue)
+  color: var(--blue);
+  margin-bottom:0;
 }
 
 body{
@@ -31,19 +32,69 @@ a{
   text-decoration: none;
 }
 
-.main-content{
-  border: 3px dashed var(--coral);
-  border-bottom: none;
-  border-radius: 15px 15px 0 0;
-  background-color: var(--dark-bone);
-  width: min(70vw - 5px, 750px);
-  height: 90vh;
-  margin-inline: auto;
+.App{
+  height:90vh;
+}
+
+#navbar{
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #1c518e;
+}
+
+#logo{
+  padding: 3px 0 3px 0;
+}
+
+#navbar-corporate-brand{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: 600;
+}
+
+#corporate-brand-logo{
+  padding: 3px 0 3px 0;
+}
+
+#navbar-options{
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap:25px;
+  padding:0;
+  font-weight: 400;
+}
+
+#not-found-message{
+  width: 100vw;
+  height: 80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  color: var(--coral)
+}
+
+.login-options{
+  display: flex;
+  flex-direction:row;
+}
+
+.login-options>button{
+  margin-top:0.4375rem;
+  border:none;
+  background-color:rgba(255, 255, 255, 0);
+  font-weight: 500;
 }
 
 .login-content{
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,22 +102,43 @@ a{
 
 .login-bubble{
   border: 3px dashed var(--coral);
-  border-radius: 15px;
+  border-radius: 55px;
   background-color: var(--dark-bone);
   width: min(70vw - 5px, 750px);
   height: 30vh;
   margin-inline: auto;
 }
 
-
+.register-bubble{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-inline: auto;
+}
 
 #register-form{
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
+  width: min(70vw - 5px, 750px);
+  height: 75vh;
+  border: 3px dashed var(--coral);
+  border-radius: 55px;
+  background-color: var(--dark-bone);
+}
+.register-button{
+  align-self: center;
+  width: 50%;
+  height: 5%;
+  border-radius: 55px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--coral);
+  font-size: var(--md);
+  cursor:pointer;
+  padding-bottom: 3px;
 }
 
 #login-form{
@@ -89,37 +161,17 @@ a{
   width: 100%;
   height: 30px;
   border: 2px solid var(--coral);
-  border-radius: 5px;
+  border-radius: 55px;
 }
 
 .login-button{
   align-self: center;
   font-size: var(--md);
-  border-radius: 5px;
+  border-radius: 55px;
   border: none;
   padding-bottom: 6px;
   background-color: var(--blue);
   color: var(--coral);
   width: 25%;
   cursor: pointer;
-}
-
-#register-hyperlink{
-  position: absolute;
-  top:515px;
-  font-size: var(--sm);
-  margin-left: 75px;
-  color: blue;
-}
-
-.register-button{
-  align-self: center;
-  width: 50%;
-  height: 5%;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--blue);
-  color: var(--coral);
-  font-size: var(--md);
-  cursor:pointer
 }
