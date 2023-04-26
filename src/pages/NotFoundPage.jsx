@@ -1,7 +1,10 @@
 function NotFoundPage(){
     return(
     <>
-        <div>404 not found :D</div>
+        <div id="not-found-message">
+        <h2 id="notfound-title">404 Not Found</h2>
+        <p id="notfound-message">Nada por aquí...</p>
+        </div>
     </>)
 }
 export default NotFoundPage
