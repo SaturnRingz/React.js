@@ -1,6 +1,6 @@
 import LoginForm from "../components/LoginForm";
 
-function Login(props){
+function Login(){
 return(
 <>
 <div className="login-content">
