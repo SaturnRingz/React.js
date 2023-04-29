@@ -1,6 +1,4 @@
 import LabeledInput from "./LabeledInput";
-import { Link } from "react-router-dom";
-import AlertJoke from "../scripts/AlertJoke";
 function LoginForm(){
 return(
 <>
