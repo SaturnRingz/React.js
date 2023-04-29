@@ -4,12 +4,13 @@ function NavBar(){
     return(
     <>
         <nav id="navbar">
-            <a id="navbar-corporate-brand" href="https://benhowell.github.io/react-grid-gallery/examples/custom-image-component">
+            <Link id="navbar-corporate-brand" to="/">
             <img id="corporate-brand-logo" src={require('../media/pictures/alienpet.png')}alt="alienpet"></img>
                 <p>
-                <Link to="/">TiendAlien</Link>
+                    TiendAlien
                 </p>
-            </a>
+
+            </Link>
             <ul id="navbar-options">
                 <li>
                     <Link to="/">Home</Link>
