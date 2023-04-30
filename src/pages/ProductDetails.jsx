@@ -36,9 +36,7 @@ function ProductDetails() {
         <img src={product.pictures[0].url} alt="product-img" id="product-detail-img"></img>
         <h2>{product.title}</h2>
         <h3>${product.price}</h3>
-        <button id="buy-button">
-          <Link >Comprar</Link>
-        </button>
+        <Link id="buy-button"><p>Comprar</p></Link>
         </div>
       </>
     );
