@@ -5,7 +5,7 @@ function NavBar(){
     <>
         <nav id="navbar">
             <Link id="navbar-corporate-brand" to="/">
-            <img id="corporate-brand-logo" src={require('../media/pictures/alienpet.png')}alt="alienpet"></img>
+            <img id="corporate-brand-logo" src={require('../Media/pictures/alienpet.png')}alt="alienpet"></img>
                 <p>
                     TiendAlien
                 </p>
@@ -13,10 +13,10 @@ function NavBar(){
             </Link>
             <ul id="navbar-options">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Shop</Link>
                 </li>
                 <li>
-                    <Link to="https://www.chess.com/es/play/online">Random</Link>
+                    <Link to="https://www.chess.com/es/play/online">Chess</Link>
                 </li>
                 <li>
                     <Link to="/*">404</Link>
