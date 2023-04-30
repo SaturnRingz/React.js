@@ -30,7 +30,11 @@ function RegisterForm(){
         title="Repetir Contraseña"
         type="password"
         id="re-pwd"/>
-        <input type="submit" value="Registrarse" className="register-button"/>
+        <button className="register-button">
+        <a href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-4">
+            Registrarse
+        </a>
+        </button>
     </form>
     </div>
     </>
