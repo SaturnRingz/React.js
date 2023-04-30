@@ -32,12 +32,27 @@ a{
   text-decoration: none;
 }
 
+button>a>img{
+  width:50%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+hr{
+  border:none;
+  width: 50%;
+  height: 1px;
+  color:black;
+  background-color:black;
+}
+
 .App{
   height:90vh;
 }
 
 #navbar{
-  width: 100vw;
+  width: 99.1vw;
   height: 5vh;
   display: flex;
   flex-direction: row;
@@ -69,6 +84,43 @@ a{
   padding:0;
   font-weight: 400;
 }
+
+#loading_screen{
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#002a5b8c
+}
+#loading_screen>img{
+  max-width: 100px;
+  animation: spin 3s linear infinite;  
+}
+
+#home-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:20px;
+}
+
+#product-line-title{
+  text-align: center;;
+  font-size: var(--lg);
+  font-weight: 500;
+  color: var(--coral);
+  width:auto;
+}
+#product{
+  width: 20vw;
+  height: 25vh;
+  border-radius: 9px;
+  border: 2px solid #1c518e
+}
+
 
 #not-found-message{
   width: 100vw;
@@ -174,4 +226,20 @@ a{
   color: var(--coral);
   width: 25%;
   cursor: pointer;
+}
+
+#legal-footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
