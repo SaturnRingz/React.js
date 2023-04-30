@@ -31,7 +31,7 @@ function RegisterForm(){
         type="password"
         id="re-pwd"/>
         <button className="register-button">
-        <a href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-4">
+        <a href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-4"  target="_blank" rel="noreferrer">
             Registrarse
         </a>
         </button>
