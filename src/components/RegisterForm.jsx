@@ -5,7 +5,7 @@ function RegisterForm(){
     <>
     <div className="register-bubble">
     <form id="register-form">
-    <h1>Formulario de registro</h1>
+    <h1>Regístrate</h1>
         <LabeledInput   
         title="Nombre"                
         type="text"
