@@ -43,8 +43,8 @@ hr{
   border:none;
   width: 50%;
   height: 1px;
-  color:black;
-  background-color:black;
+  color: #1c518e;
+  background-color: #1c518e;
 }
 
 .App{
@@ -52,6 +52,9 @@ hr{
 }
 
 #navbar{
+  z-index: 1;
+  position: sticky;
+  top: 0;
   width: 99.1vw;
   height: 5vh;
   display: flex;
@@ -107,6 +110,25 @@ hr{
   gap:20px;
 }
 
+#product-card{
+  margin: 50px 0 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color:#EA5455;
+}
+#buy-button{
+  width:500px;
+  height: 50px;
+  font-size: var(--md);
+  border:2px solid #1c518e;
+  border-radius: 10px;
+  background-color:#001833;
+  padding: 0 0 5px 0;
+}
+
 #product-line-title{
   text-align: center;;
   font-size: var(--lg);
@@ -118,7 +140,7 @@ hr{
   width: 20vw;
   height: 25vh;
   border-radius: 9px;
-  border: 2px solid #1c518e
+  border: 2px dashed var(--coral)
 }
 
 
@@ -179,6 +201,7 @@ hr{
   border: 3px dashed var(--coral);
   border-radius: 55px;
   background-color: var(--dark-bone);
+  padding: 0 0 20px 0;
 }
 .register-button{
   align-self: center;
@@ -228,7 +251,15 @@ hr{
   cursor: pointer;
 }
 
+#product-detail-img{
+  height:auto;
+  width:50%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+}
+
 #legal-footer{
+  color:#1c518e;
   display: flex;
   flex-direction: column;
   justify-content: center;
