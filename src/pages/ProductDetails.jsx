@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getProductById } from "../Services/productServices";
 import LoadingScreen from "../Components/LoadingScreen";
@@ -33,10 +33,12 @@ function ProductDetails() {
     return (
       <>
         <div id="product-card">
-        <img src={product.pictures[0].url} alt="product-img"></img>
+        <img src={product.pictures[0].url} alt="product-img" id="product-detail-img"></img>
         <h2>{product.title}</h2>
-        <h3>{product.price}</h3>
-        <button>Comprar</button>
+        <h3>${product.price}</h3>
+        <button id="buy-button">
+          <Link >Comprar</Link>
+        </button>
         </div>
       </>
     );
