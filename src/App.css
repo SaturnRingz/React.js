@@ -120,6 +120,11 @@ hr{
   color:#EA5455;
 }
 #buy-button{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  padding-top:25px;
   width:500px;
   height: 50px;
   font-size: var(--md);
