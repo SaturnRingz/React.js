@@ -227,12 +227,12 @@ hr{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  
 }
 
 .labeled-input{
-  align-self: center;
+  align-self:center;
   width: 80%;
+  height: 3,5vh;
   color: var(--blue);
   font-weight: 500;
 }
@@ -269,6 +269,12 @@ hr{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#error-msg{
+  margin: 0;
+  font-size: 11px;
+  color:red;
 }
 
 @keyframes spin {
