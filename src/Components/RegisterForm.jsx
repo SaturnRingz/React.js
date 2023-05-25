@@ -7,6 +7,7 @@ function RegisterForm(){
     const onSubmit=(data)=>{
         try{
                 const user = createUser(data);
+                console.log(user)
         }catch(e){
             console.log(e)
         }
