@@ -1,24 +1,23 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getProductById } from "../Services/productServices";
+import { getById } from "../Services/productServices";
 import LoadingScreen from "../Components/LoadingScreen";
 
 function ProductDetails() {
-  
+
     const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
-  
-  
+
+
   useEffect(() => {
     const request = async () => {
       try {
-        const response = await getProductById(id);
-        setProduct(response);
+        const response = await getById(id);
+        setProduct(response.data());
         setLoading(false);
-        console.log(response)
-      } catch (error) {
-        console.log(error);
+      } catch (e) {
+        console.log(e);
       }
     };
 
@@ -33,8 +32,9 @@ function ProductDetails() {
     return (
       <>
         <div id="product-card">
-        <img src={product.pictures[0].url} alt="product-img" id="product-detail-img"></img>
+        <img src={product.thumbnail} alt="product-img" id="product-detail-img"></img>
         <h2>{product.title}</h2>
+        <h6>{product.details}</h6>
         <h3>${product.price}</h3>
         <Link id="buy-button"><p>Comprar</p></Link>
         </div>

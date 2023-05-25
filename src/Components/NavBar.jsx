@@ -21,6 +21,14 @@ function NavBar(){
                 <li>
                     <Link to="/*">404</Link>
                 </li>
+                <li>
+                <div className="dropdown">
+                    <button className="dropbtn">Productos▼</button>
+                    <div className="dropdown-content">
+                        <Link to="/product/add">Agregar producto</Link>
+                    </div>
+                </div>
+                </li>
             </ul>
             <div className="login-options">
                 <button>

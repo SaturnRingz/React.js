@@ -1,25 +1,42 @@
-import LabeledInput from "./LabeledInput";
+import {useForm} from 'react-hook-form';
+import { login } from '../Services/userServices';
 function LoginForm(){
-return(
-<>
-    <form id="login-form">
-        <LabeledInput
-            id="login-username"
-            title="Usuario"
-            type="text"
-        />
-        <LabeledInput
-            id="login-pwd"
-            title="Contraseña"
-            type="password"
-        />
-        <button className="login-button">
-        <a href="https://soundcloud.com/rick-astley-official/never-gonna-give-you-up-4"  target="_blank" rel="noreferrer">
-            Iniciar sesión
-        </a>
-        </button>
-    </form>
-</>)
+    const {register, handleSubmit, formState:{errors}} = useForm ({mode: 'onChange'});
+
+    const onSubmit= async (data)=>{
+        try{
+            const userLogin = await login(data.email, data.password);
+        }catch(e){
+            console.log(e)
+        }
+    }
+    return(
+    <>
+        <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
+            <label className="labeled-input">Correo
+            <div style={{height: "3px"}}></div>
+            <input  type="text"
+                    name="email"
+                    id="login-username"
+                    className="register-input"
+                    {...register("email", {required: true})}
+                    />
+                    {errors.email?.type === 'required' &&(<p id="error-msg">Este campo es obligatorio</p>)}
+            </label>
+            <label className="labeled-input">Contraseña
+            <div style={{height: "3px"}}></div>
+            <input  type="password"
+                    name="password"
+                    id="login-pwd"
+                    className="register-input"
+                    {...register("password", {required: true, minLength:8, maxLength:16})}
+                    />
+                    {errors.password?.type === 'required' &&(<p id="error-msg">Este campo es obligatorio</p>)}
+            </label>
+            <button className="login-button" type="submit">Ingresar
+            </button>
+        </form>
+    </>)
 }
 
 export default LoginForm;

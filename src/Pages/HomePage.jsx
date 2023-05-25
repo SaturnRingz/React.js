@@ -1,58 +1,55 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import LoadingScreen from "../Components/LoadingScreen";
+import SearchBar from "../Components/SearchBar"
 import Product from "../Components/Product";
 import { getAllProducts } from "../Services/productServices";
-import firebase from '../Config/firebase'
+
 function HomePage() {
-
-  console.log(firebase);
-
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Cargando productos...");
   const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState('Aliens');
+  const [search, setSearch] = useState("");
 
-  useEffect(
-    ()=>{
-        const request = async () => {
-            try {
-        const response = await getAllProducts(search);
-        setProducts(response.results);
+  useEffect(() => {
+    const request = async () => {
+      try {
+        const querySnapshot = await getAllProducts(search);
+        setProducts(querySnapshot.docs);
         setTitle("Línea de productos");
-        setLoading(false)
-      } catch (error) {
-        console.log(error);
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
       }
     };
     request();
   }, [search]);
 
-  const handleChange=(event)=>{
-    const value= event.target.value;
-    console.log(value);
+  const handleChange = (event) => {
+    const value = event.target.value;
     setSearch(value);
-  }
+  };
 
   if (loading) {
-    return <LoadingScreen/>;
+    return <LoadingScreen />;
   } else {
     return (
       <>
         <p id="product-line-title">{title}</p>
-        <div className="search-container">
-        <input type="text" id="search" value={search} onChange={handleChange}></input>
-        </div>
+        <SearchBar
+          value={search}
+          onChange={handleChange}
+        />
         <div id="home-content">
-        {products.map((product, i) => (
-          <Product
-            key={i}
-            imgUrl={product.thumbnail}
-            alt={`productImage${i}`}
-            id={product.id}
-            title={product.title}
-          />
-        ))}
+          {products.map((product) => (
+            <Product
+              key={product.id}
+              imgUrl={product.data().thumbnail}
+              alt={`productImage${product.id}`}
+              id={product.id}
+              title={product.data().title}
+            />
+          ))}
         </div>
       </>
     );

@@ -1,14 +1,19 @@
-function LabeledInput(props){
-    return(
-        <label className="labeled-input">{props.title}
+import ErrorBubble from "./ErrorBubble";
+
+
+function LabeledInput({title, type = "text", name, register, errors,
+  }){
+    return(<>
+        <label className="labeled-input">{title}
         <div style={{height: "3px"}}></div>
-        <input  type={props.type}
-                name={props.name}
-                id={props.id}
+        <input  type={type}
+                name={name}
                 className="register-input"
+                {...register}
                 />
+        {errors && ErrorBubble}
         </label>
-    );
+    </>);
 }
 
 export default LabeledInput;
