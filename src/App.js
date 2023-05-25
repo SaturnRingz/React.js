@@ -6,7 +6,7 @@ import NotFoundPage from './Pages/NotFoundPage';
 import NavBar from './Components/NavBar';
 import ProductDetails from './Pages/ProductDetails';
 import Disclaimer from './Components/Disclaimer';
-import { 
+import {
   BrowserRouter as Router,
   Route,
   Routes,} from 'react-router-dom';
@@ -14,7 +14,7 @@ import {
 function App() {
   return (
   <div className="App">
-    
+
     <Router>
       <NavBar/>
       <Routes>
