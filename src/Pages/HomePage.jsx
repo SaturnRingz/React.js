@@ -3,8 +3,11 @@ import { useEffect } from "react";
 import LoadingScreen from "../Components/LoadingScreen";
 import Product from "../Components/Product";
 import { getAllProducts } from "../Services/productServices";
-
+import firebase from '../Config/firebase'
 function HomePage() {
+
+  console.log(firebase);
+
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Cargando productos...");
   const [products, setProducts] = useState([]);
@@ -37,7 +40,9 @@ function HomePage() {
     return (
       <>
         <p id="product-line-title">{title}</p>
+        <div className="search-container">
         <input type="text" id="search" value={search} onChange={handleChange}></input>
+        </div>
         <div id="home-content">
         {products.map((product, i) => (
           <Product
