@@ -1,6 +1,6 @@
-export function getAllProducts(){
+export function getAllProducts(search){
     return fetch(
-        "https://api.mercadolibre.com/sites/MLA/search?q=extraterrestres%20alien"
+        `https://api.mercadolibre.com/sites/MLA/search?q=${search}`
       ).then(res => res.json());
 }
 

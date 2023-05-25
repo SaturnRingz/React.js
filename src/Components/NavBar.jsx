@@ -5,7 +5,7 @@ function NavBar(){
     <>
         <nav id="navbar">
             <Link id="navbar-corporate-brand" to="/">
-            <img id="corporate-brand-logo" src={require('../Media/pictures/alienpet.png')}alt="alienpet"></img>
+            <img id="corporate-brand-logo" src={require('../Assets/pictures/alienpet.png')}alt="alienpet"></img>
                 <p>
                     TiendAlien
                 </p>

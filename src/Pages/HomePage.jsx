@@ -8,13 +8,13 @@ function HomePage() {
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Cargando productos...");
   const [products, setProducts] = useState([]);
-  const imageUrl = "https://media.newyorker.com/photos/5d0be56fe140839b70c68120/master/w_2560%2Cc_limit/Phillips-Neon-Genesis-Evangelion.jpg";
+  const [search, setSearch] = useState('Aliens');
 
   useEffect(
     ()=>{
         const request = async () => {
             try {
-        const response = await getAllProducts();
+        const response = await getAllProducts(search);
         setProducts(response.results);
         setTitle("Línea de productos");
         setLoading(false)
@@ -23,7 +23,13 @@ function HomePage() {
       }
     };
     request();
-  }, []);
+  }, [search]);
+
+  const handleChange=(event)=>{
+    const value= event.target.value;
+    console.log(value);
+    setSearch(value);
+  }
 
   if (loading) {
     return <LoadingScreen/>;
@@ -31,6 +37,7 @@ function HomePage() {
     return (
       <>
         <p id="product-line-title">{title}</p>
+        <input type="text" id="search" value={search} onChange={handleChange}></input>
         <div id="home-content">
         {products.map((product, i) => (
           <Product
