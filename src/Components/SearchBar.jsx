@@ -1,11 +1,11 @@
-function SearchBar(props){
+function SearchBar({value, onChange}){
     return(<>
         <div className="search-container">
           <input
             type="text"
             id="search"
-            value={props.value}
-            onChange={props.onChange}
+            value={value}
+            onChange={onChange}
           ></input>
         </div>
     </>)
