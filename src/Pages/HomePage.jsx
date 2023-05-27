@@ -29,12 +29,8 @@ function HomePage() {
     const value = event.target.value;
     setSearch(value);
   };
-
-  if (loading) {
-    return <LoadingScreen />;
-  } else {
     return (
-      <>
+      <LoadingScreen loading={loading}>
         <p id="product-line-title">{title}</p>
         <SearchBar
           value={search}
@@ -51,8 +47,8 @@ function HomePage() {
             />
           ))}
         </div>
-      </>
+      </LoadingScreen>
     );
   }
-}
+
 export default HomePage;
