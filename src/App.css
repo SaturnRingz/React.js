@@ -56,8 +56,7 @@ hr{
   z-index: 1;
   position: sticky;
   top: 0;
-  width: 100vw;
-  overflow:overlay;
+  width: 99.2vw;
   height: 5vh;
   display: flex;
   flex-direction: row;
