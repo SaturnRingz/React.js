@@ -24,13 +24,8 @@ function ProductDetails() {
    request()
 
   }, [id]);
-
-
-  if (loading) {
-    return <LoadingScreen />;
-  } else {
     return (
-      <>
+      <LoadingScreen loading={loading}>
         <div id="product-card">
         <img src={product.thumbnail} alt="product-img" id="product-detail-img"></img>
         <h2>{product.title}</h2>
@@ -38,8 +33,7 @@ function ProductDetails() {
         <h3>${product.price}</h3>
         <Link id="buy-button"><p>Comprar</p></Link>
         </div>
-      </>
+      </LoadingScreen>
     );
   }
-}
 export default ProductDetails;
