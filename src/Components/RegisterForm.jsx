@@ -1,16 +1,25 @@
 import {useForm} from 'react-hook-form';
 import { createUser } from '../Services/userServices';
 import LabeledInput from './LabeledInput';
+import { useState } from 'react';
+import Alert from './Alert';
+import LoadButton from './LoadButton';
+import { registerMessage } from '../Utils/errorMessages';
 
 function RegisterForm(){
     const {register, handleSubmit, formState:{errors}} = useForm ({mode: 'onChange'});
+    const [alert, setAlert] = useState({text:'', variant:'', duration:0, link:''})
+    const [loading, setLoading] = useState(false);
 
-    const onSubmit=(data)=>{
+    const onSubmit= async (data)=>{
+        setLoading(true);
         try{
-                const user = createUser(data);
-                console.log(user)
+                const user = await createUser(data);
+                setAlert({text:"Tu cuenta ha sido creada exitosamente", variant:"alert-success-msg", duration:300, link:'/'})
+                setLoading(false);
         }catch(e){
-            console.log(e)
+                setLoading(false);
+                setAlert({text:registerMessage[e.code] || registerMessage.generic, variant:"alert-error-msg"});
         }
     }
     return(
@@ -53,7 +62,8 @@ function RegisterForm(){
                         rules={{required: true, minLength: 8, maxLength: 16}}
                         errors={errors}
         />
-        <button className="register-button" type="submit">Registrarse</button>
+        <Alert text={alert.text} variant={alert.variant} duration={alert.duration} link={alert.link}/>
+        <LoadButton text="Registrarse" loading={loading}/>
         </form>
         </div>
     </>)
