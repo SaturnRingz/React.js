@@ -1,11 +1,11 @@
 import LoginForm from "../Components/LoginForm";
 
-function Login(){
+function Login({setLogin}){
 return(
 <>
 <div className="login-content">
     <div className="login-bubble">
-        <LoginForm/>
+        <LoginForm setLogin={setLogin}/>
     </div>
 </div>
 </>)

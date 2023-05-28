@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {useForm} from 'react-hook-form';
 import { useParams,Link} from 'react-router-dom';
 import { updateProduct, getById, deleteProduct} from '../Services/productServices';
 import LabeledInput from './LabeledInput'
+import LoadingScreen from './LoadingScreen';
 
 function ModifyProductForm(){
     const {register, handleSubmit, setValue, formState:{errors}} = useForm ({mode: 'onChange'});
     const {id} = useParams();
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const result = async () => {
@@ -16,6 +18,7 @@ function ModifyProductForm(){
             setValue("price", response.data().price);
             setValue("thumbnail", response.data().thumbnail);
             setValue("details", response.data().details);
+            setLoading(false);
           } catch (e) {
             console.log(e);
           }
@@ -42,6 +45,7 @@ function ModifyProductForm(){
     }
     return(
     <>
+      <LoadingScreen loading={loading}>
         <div className="register-bubble">
         <form id="register-form" onSubmit={handleSubmit(onSubmit)}>
         <h1>Modificar los datos del producto</h1>
@@ -77,6 +81,7 @@ function ModifyProductForm(){
         <Link className="register-button" onClick={handleDelete} to="/">Eliminar</Link>
         </form>
         </div>
+      </LoadingScreen>
     </>)
 }
 

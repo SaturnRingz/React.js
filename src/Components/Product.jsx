@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function Product({id, title, imgUrl, alt, price}){
+function Product({id, title, imgUrl, alt, price, isLoggedIn}){
 
 return(<>
     <button id="product">
@@ -9,7 +9,7 @@ return(<>
     <h3>{price}</h3>
     <div id="product-options">
         <Link className="product-option" to={`/product/${id}`}>Detalles</Link>
-        <Link className="product-option" to={`/product/edit/${id}`}>Modificar</Link>
+        {isLoggedIn && (<Link className="product-option" to={`/product/edit/${id}`}>Modificar</Link>)}
     </div>
     </button>
 </>)

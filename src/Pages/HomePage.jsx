@@ -5,7 +5,7 @@ import SearchBar from "../Components/SearchBar"
 import Product from "../Components/Product";
 import { getAllProducts } from "../Services/productServices";
 
-function HomePage() {
+function HomePage({isLoggedIn}) {
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Cargando productos...");
   const [products, setProducts] = useState([]);
@@ -44,6 +44,7 @@ function HomePage() {
               alt={`productImage${product.id}`}
               id={product.id}
               title={product.data().title}
+              isLoggedIn={isLoggedIn}
             />
           ))}
         </div>
