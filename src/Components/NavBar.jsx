@@ -1,45 +1,27 @@
 import { Link } from "react-router-dom";
+import NavbarOptions from "./NavbarOptions";
+import LogOptions from "./LogOptions";
 
-function NavBar(){
-    return(
+function NavBar({isLoggedIn, setLogin}) {
+  const marketName = "TiendAlien";
+  return (
     <>
-        <nav id="navbar">
-            <Link id="navbar-corporate-brand" to="/">
-            <img id="corporate-brand-logo" src={require('../Assets/pictures/alienpet.png')}alt="alienpet"></img>
-                <p>
-                    TiendAlien
-                </p>
-
-            </Link>
-            <ul id="navbar-options">
-                <li>
-                    <Link to="/">Shop</Link>
-                </li>
-                <li>
-                    <Link to="https://www.chess.com/es/play/online">Chess</Link>
-                </li>
-                <li>
-                    <Link to="/*">404</Link>
-                </li>
-                <li>
-                <div className="dropdown">
-                    <button className="dropbtn">Productos▼</button>
-                    <div className="dropdown-content">
-                        <Link to="/product/add">Agregar producto</Link>
-                    </div>
-                </div>
-                </li>
-            </ul>
-            <div className="login-options">
-                <button>
-                    <Link to="/login">Iniciar sesión</Link>
-                </button>
-                <p style={{color: '#EA5455'}}>/</p>
-                <button>
-                    <Link to="/register">Registrarse</Link>
-                </button>
-            </div>
-        </nav>
-    </>)
+        <div id="nav-bar-container">
+            <nav id="navbar">
+                <Link id="navbar-corporate-brand" to="/">
+                <img
+                    id="corporate-brand-logo"
+                    src={require("../Assets/pictures/alienpet.png")}
+                    alt="alienpet"
+                ></img>
+                <p>{marketName}</p>
+                </Link>
+                <NavbarOptions isLoggedIn={isLoggedIn}/>
+                <LogOptions isLoggedIn={isLoggedIn} setLogin={setLogin}/>
+            </nav>
+      </div>
+    </>
+  );
 }
-export default NavBar;
+
+      export default NavBar;
