@@ -4,7 +4,7 @@ function Disclaimer() {
         <hr></hr>
         <address><a href="mailto:emijesusgon@gmail.com">Contacto</a></address>
       <p>
-        <small>Código de libre distribución, segunda entrega del curso de React.JS de la UTN.</small>
+        <small>Código de libre distribución, última entrega del curso de React.JS de la UTN.</small>
       </p>
     </footer>
   );
