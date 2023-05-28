@@ -12,16 +12,18 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,} from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
+  const [login, setLogin] = useState(false);
   return (
   <div className="App">
 
     <Router>
-      <NavBar/>
+      <NavBar isLoggedIn={login} setLogin={setLogin}/>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<HomePage isLoggedIn={login}/>}/>
+        <Route path="/login" element={<Login setLogin={setLogin}/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/product/add" element={<AddProduct/>}/>
         <Route path="/product/edit/:id" element={<ModifyProduct/>}/>
