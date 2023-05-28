@@ -1,40 +1,51 @@
 import {useForm} from 'react-hook-form';
 import { login } from '../Services/userServices';
-function LoginForm(){
+import LabeledInput from './LabeledInput';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import Alert from './Alert';
+import { loginMessage } from '../Utils/errorMessages';
+import LoadButton from './LoadButton';
+function LoginForm({setLogin}){
     const {register, handleSubmit, formState:{errors}} = useForm ({mode: 'onChange'});
+    const navigate= useNavigate();
+    const [alert, setAlert]= useState({text:'', variant:''})
+    const [loading, setLoading]= useState(false)
 
     const onSubmit= async (data)=>{
         try{
+            setLoading(true)
             const userLogin = await login(data.email, data.password);
+            navigate('/')
+            setLogin(true);
+            setLoading(false)
         }catch(e){
-            console.log(e)
+            setLoading(true)
+            setAlert({text:loginMessage[e.code] || loginMessage.generic, variant:"alert-error-msg"});
+            setLoading(false)
         }
     }
+
     return(
     <>
         <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
-            <label className="labeled-input">Correo
-            <div style={{height: "3px"}}></div>
-            <input  type="text"
-                    name="email"
-                    id="login-username"
-                    className="register-input"
-                    {...register("email", {required: true})}
-                    />
-                    {errors.email?.type === 'required' &&(<p id="error-msg">Este campo es obligatorio</p>)}
-            </label>
-            <label className="labeled-input">Contraseña
-            <div style={{height: "3px"}}></div>
-            <input  type="password"
-                    name="password"
-                    id="login-pwd"
-                    className="register-input"
-                    {...register("password", {required: true, minLength:8, maxLength:16})}
-                    />
-                    {errors.password?.type === 'required' &&(<p id="error-msg">Este campo es obligatorio</p>)}
-            </label>
-            <button className="login-button" type="submit">Ingresar
-            </button>
+            <LabeledInput   label="Correo electrónico"
+                            type="text"
+                            control="email"
+                            register={register}
+                            errors={errors}
+                            rules={{required:true}}
+
+            />
+            <LabeledInput   label="Contraseña"
+                            type="password"
+                            control="password"
+                            register={register}
+                            errors={errors}
+                            rules={{required:true}}
+            />
+            <Alert text={alert.text} variant={alert.variant}/>
+            <LoadButton text="Iniciar sesión" loading={loading}/>
         </form>
     </>)
 }
