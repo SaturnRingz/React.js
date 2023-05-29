@@ -50,3 +50,33 @@ function HomePage({ isLoggedIn }) {
 }
 
 export default HomePage;
+
+/* CASO MELI:
+
+seEffect(() => {
+    const request = async () => {
+      try {
+        const response = await getAllProducts(search);
+        setProducts(response.results);
+        setTitle("Línea de productos");
+        setLoading(false);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    request();
+  }, [search, products]);
+
+  ...
+      <div id="home-content">
+        {products.map((product,i)=>(
+          <Product
+            key={i}
+            imgUrl={product.thumbnail}
+            alt={product.thumbnail_id}
+            id={product.id}
+            title={product.title}
+          />
+        ))}
+      </div>
+*/

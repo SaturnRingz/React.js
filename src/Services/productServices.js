@@ -1,7 +1,8 @@
 import firebase from "../Config/firebase";
 
 export async function getAllProducts(search) {
-  /*return fetch(
+  /*CASO MELI:
+  return await fetch(
          `https://api.mercadolibre.com/sites/MLA/search?q=${search}`
     ).then(res => res.json()); */
   return await firebase.firestore().collection("products").get();
