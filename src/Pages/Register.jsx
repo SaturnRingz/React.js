@@ -1,9 +1,6 @@
-import RegisterForm from '../Components/RegisterForm'
+import RegisterForm from "../Components/RegisterForm";
 
-function Register(){
-
-    return(
-        <RegisterForm/>
-    )
+function Register() {
+  return <RegisterForm />;
 }
 export default Register;

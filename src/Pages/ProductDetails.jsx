@@ -4,11 +4,11 @@ import { getById } from "../Services/productServices";
 import LoadingScreen from "../Components/LoadingScreen";
 
 function ProductDetails() {
-
-    const { id } = useParams();
+  const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
-  const cruelAngelThesis="https://soundcloud.com/artemis-ward-123265960/neon-genesis-evangelion-opening-a-cruel-angels-thesis"
+  const cruelAngelThesis =
+    "https://soundcloud.com/artemis-ward-123265960/neon-genesis-evangelion-opening-a-cruel-angels-thesis";
   useEffect(() => {
     const request = async () => {
       try {
@@ -20,19 +20,24 @@ function ProductDetails() {
       }
     };
 
-   request()
-
+    request();
   }, [id]);
-    return (
-      <LoadingScreen loading={loading}>
-        <div id="product-card">
-        <img src={product.thumbnail} alt="product-img" id="product-detail-img"></img>
+  return (
+    <LoadingScreen loading={loading}>
+      <div id="product-card">
+        <img
+          src={product.thumbnail}
+          alt="product-img"
+          id="product-detail-img"
+        ></img>
         <h2>{product.title}</h2>
         <h6>{product.details}</h6>
         <h3>${product.price}</h3>
-        <Link id="buy-button" to={cruelAngelThesis} >Comprar</Link>
-        </div>
-      </LoadingScreen>
-    );
-  }
+        <Link id="buy-button" to={cruelAngelThesis}>
+          Comprar
+        </Link>
+      </div>
+    </LoadingScreen>
+  );
+}
 export default ProductDetails;

@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 
 function LogOptions({ isLoggedIn, setLogin }) {
-    const navigate = useNavigate();
-    const handleLogOut=()=>{
-        setLogin(false);
-        navigate('/');
-    }
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    setLogin(false);
+    navigate("/");
+  };
   return (
     <>
       {!isLoggedIn && (
@@ -24,7 +24,7 @@ function LogOptions({ isLoggedIn, setLogin }) {
 
       {isLoggedIn && (
         <div className="login-options">
-        <Link onClick={handleLogOut}>Cerrar sesión</Link>
+          <Link onClick={handleLogOut}>Cerrar sesión</Link>
         </div>
       )}
     </>
