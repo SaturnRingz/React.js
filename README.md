@@ -1,1 +1,1 @@
-Proyecto hecho con npm create-react-app
+-Proyecto inicializado con CRA
