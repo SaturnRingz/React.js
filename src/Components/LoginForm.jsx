@@ -10,7 +10,7 @@ import LabeledInput from "./LabeledInput";
 import LoadButton from "./LoadButton";
 import Alert from "./Alert";
 
-function LoginForm({ setLogin }) {
+function LoginForm({context}) {
   const navigate = useNavigate();
   const {
     register,
@@ -25,7 +25,7 @@ function LoginForm({ setLogin }) {
       setLoading(true);
       const userLogin = await login(data.email, data.password);
       navigate("/");
-      setLogin(true);
+      context.handleLogin(true);
       setLoading(false);
     } catch (e) {
       setLoading(true);

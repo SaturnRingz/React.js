@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function NavbarOptions({ isLoggedIn }) {
+export default function NavbarOptions({context}) {
   return (
     <ul id="navbar-options">
       <li>
@@ -12,7 +12,7 @@ export default function NavbarOptions({ isLoggedIn }) {
       <li>
         <Link to="/*">404</Link>
       </li>
-      {isLoggedIn && (
+      {context.login && (
         <li>
           <div className="dropdown">
             <button className="dropbtn">Productos▼</button>

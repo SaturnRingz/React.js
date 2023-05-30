@@ -1,11 +1,14 @@
+import { useContext } from "react";
+import { AuthContext } from "../Context/authContext";
 import LoginForm from "../Components/LoginForm";
 
-function Login({ setLogin }) {
+function Login() {
+  const context=useContext(AuthContext);
   return (
     <>
       <div className="login-content">
         <div className="login-bubble">
-          <LoginForm setLogin={setLogin} />
+          <LoginForm context={context} />
         </div>
       </div>
     </>

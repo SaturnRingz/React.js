@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import NavbarOptions from "./NavbarOptions";
 import LogOptions from "./LogOptions";
+import { useContext } from "react";
+import { AuthContext } from "../Context/authContext";
 
-function NavBar({ isLoggedIn, setLogin }) {
+
+function NavBar() {
   const marketName = "TiendAlien";
+  const context=useContext(AuthContext);
   return (
     <>
       <div id="nav-bar-container">
@@ -16,8 +20,8 @@ function NavBar({ isLoggedIn, setLogin }) {
             ></img>
             <p>{marketName}</p>
           </Link>
-          <NavbarOptions isLoggedIn={isLoggedIn} />
-          <LogOptions isLoggedIn={isLoggedIn} setLogin={setLogin} />
+          <NavbarOptions context={context} />
+          <LogOptions context={context}/>
         </nav>
       </div>
     </>
