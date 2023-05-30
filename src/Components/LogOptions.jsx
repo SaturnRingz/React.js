@@ -1,32 +1,18 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
-function LogOptions({ isLoggedIn, setLogin }) {
-  const navigate = useNavigate();
-  const handleLogOut = () => {
-    setLogin(false);
-    navigate("/");
-  };
+function LogOptions({context}) {
   return (
     <>
-      {!isLoggedIn && (
+      {context.login && (
         <div className="login-options">
-          <Link to="/login">Iniciar sesión</Link>
-          <Link
-            style={{
-              color: "#EA5455",
-            }}
-          >
-            /
-          </Link>
+          <Link onClick={context.handleLogOut}>Cerrar sesión</Link>
+        </div>
+      )}
+      {!context.login && (<div className="login-options">
+          <Link to="/login">Iniciar Sesión</Link>
+          <Link>/</Link>
           <Link to="/register">Registrarse</Link>
-        </div>
-      )}
-
-      {isLoggedIn && (
-        <div className="login-options">
-          <Link onClick={handleLogOut}>Cerrar sesión</Link>
-        </div>
-      )}
+        </div>)}
     </>
   );
 }

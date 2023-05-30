@@ -9,24 +9,25 @@ import ModifyProduct from "./Pages/ModifyProduct";
 import NavBar from "./Components/NavBar";
 import Disclaimer from "./Components/Disclaimer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import AuthProvider from "./Context/authContext";
 
 function App() {
-  const [login, setLogin] = useState(false);
   return (
     <div className="App">
       <Router>
-        <NavBar isLoggedIn={login} setLogin={setLogin} />
-        <Routes>
-          <Route path="/" element={<HomePage isLoggedIn={login} />} />
-          <Route path="/login" element={<Login setLogin={setLogin} />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/product/add" element={<AddProduct />} />
-          <Route path="/product/edit/:id" element={<ModifyProduct />} />
-          <Route path="/*" element={<NotFoundPage />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-        </Routes>
-        <Disclaimer />
+        <AuthProvider>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/product/add" element={<AddProduct />} />
+            <Route path="/product/edit/:id" element={<ModifyProduct />} />
+            <Route path="/*" element={<NotFoundPage />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
+          </Routes>
+          <Disclaimer />
+        </AuthProvider>
       </Router>
     </div>
   );
