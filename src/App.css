@@ -53,8 +53,12 @@ hr{
   background-color: var(--glacial);
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .App{
-  height:90vh;
+  height:100vh;
 }
 
 #register-form{
@@ -78,13 +82,9 @@ hr{
   margin-inline: auto;
 }
 
-/*------------------------------------------------------*/
-
-#logo{
-  padding: 3px 0 3px 0;
-}
-
 #home-content{
+  width: auto;
+  min-height:73vh;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -117,8 +117,6 @@ hr{
   margin-inline: auto;
 }
 
-
-
 .register-button{
   align-self: center;
   width: 50%;
@@ -144,16 +142,16 @@ hr{
   cursor: pointer;
 }
 
-
-
-
 #error-msg{
   margin: 0;
   font-size: 11px;
   color:red;
 }
 
-
-input[type=number] {
-  -moz-appearance: textfield;
+#form-bubble{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 84.5%;
 }

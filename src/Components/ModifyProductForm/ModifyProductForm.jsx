@@ -55,7 +55,7 @@ function ModifyProductForm() {
   return (
     <>
       <LoadingScreen loading={loading}>
-        <div className="register-bubble">
+        <div id="form-bubble">
           <form id="register-form" onSubmit={handleSubmit(onSubmit)}>
             <h1>Modificar los datos del producto</h1>
             <LabeledInput

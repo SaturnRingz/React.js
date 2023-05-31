@@ -39,7 +39,7 @@ function LoginForm({context}) {
   };
 
   return (
-    <>
+    <><div id="form-bubble">
       <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
         <LabeledInput
           label="Correo electrónico"
@@ -60,6 +60,7 @@ function LoginForm({context}) {
         <Alert text={alert.text} variant={alert.variant} />
         <LoadButton text="Iniciar sesión" loading={loading} />
       </form>
+    </div>
     </>
   );
 }

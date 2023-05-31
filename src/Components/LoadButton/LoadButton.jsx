@@ -1,4 +1,5 @@
 import "./loadButton.css"
+
 function LoadButton({ loading, text }) {
   if (loading) {
     return (

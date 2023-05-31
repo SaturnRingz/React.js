@@ -42,7 +42,7 @@ function RegisterForm() {
   };
   return (
     <>
-      <div className="register-bubble">
+      <div id="form-bubble">
         <form id="register-form" onSubmit={handleSubmit(onSubmit)}>
           <h1>Regístrate</h1>
           <LabeledInput
