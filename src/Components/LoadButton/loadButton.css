@@ -5,3 +5,19 @@
     align-items: center;
     align-self: center;
   }
+.custom-loader {
+  width:25px;
+  height:6px;
+  background: 
+    radial-gradient(circle closest-side,#EA5455 90%,#0000) 0%   50%,
+    radial-gradient(circle closest-side,#EA5455 90%,#0000) 50%  50%,
+    radial-gradient(circle closest-side,#EA5455 90%,#0000) 100% 50%;
+  background-size:calc(100%/3) 100%;
+  background-repeat: no-repeat;
+  animation:d7 2s infinite linear;
+}
+@keyframes d7 {
+    33%{background-size:calc(100%/3) 0%  ,calc(100%/3) 100%,calc(100%/3) 100%}
+    50%{background-size:calc(100%/3) 100%,calc(100%/3) 0%  ,calc(100%/3) 100%}
+    66%{background-size:calc(100%/3) 100%,calc(100%/3) 100%,calc(100%/3) 0%  }
+}
