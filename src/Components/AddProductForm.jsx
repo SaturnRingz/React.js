@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { createProduct } from "../Services/productServices";
 import LabeledInput from "../Components/LabeledInput";
+import React from "react";
+import { AuthContext } from "../Context/authContext";
 function AddProductForm() {
   const {
     register,
@@ -8,9 +10,12 @@ function AddProductForm() {
     formState: { errors },
   } = useForm({ mode: "onSubmit" });
 
+  const context = React.useContext(AuthContext);
+
   const onSubmit = async (data) => {
+    const userData = await context.user;
     try {
-      const document = await createProduct(data);
+      const document = await createProduct(data, userData);
       console.log(document);
     } catch (e) {
       console.log(e);

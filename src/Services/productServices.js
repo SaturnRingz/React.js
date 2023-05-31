@@ -10,12 +10,13 @@ export async function getAllProducts(search) {
 /*
 export async function getProductsPerUser(){} ---> para la página 'mis productos'
 */
-export async function createProduct(payload) {
+export async function createProduct(payload, user) {
   return await firebase.firestore().collection("products").add({
     title: payload.title,
     price: payload.price,
     details: payload.details,
     thumbnail: payload.thumbnail,
+    owner_id: user.uid
   });
 }
 
