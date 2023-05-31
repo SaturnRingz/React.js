@@ -1,0 +1,8 @@
+#legal-footer{
+    color:var(--glacial);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  

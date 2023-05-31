@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getById } from "../Services/productServices";
-import LoadingScreen from "../Components/LoadingScreen";
+import LoadingScreen from "../Components/LoadingScreen/LoadingScreen";
 
 function ProductDetails() {
   const { id } = useParams();

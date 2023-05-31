@@ -1,3 +1,4 @@
+import "./disclaimer.css"
 function Disclaimer() {
   return (
     <footer id="legal-footer">

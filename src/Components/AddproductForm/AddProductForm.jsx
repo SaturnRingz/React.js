@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { createProduct } from "../Services/productServices";
-import LabeledInput from "../Components/LabeledInput";
+import { createProduct } from "../../Services/productServices";
+import LabeledInput from "../LabeledInput/LabeledInput";
 import React from "react";
-import { AuthContext } from "../Context/authContext";
+import { AuthContext } from "../../Context/authContext";
 
 function AddProductForm() {
 

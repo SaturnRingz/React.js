@@ -1,5 +1,5 @@
 import { Link} from "react-router-dom";
-
+import "./logOptions.css"
 function LogOptions({context}) {
   return (
     <>

@@ -1,0 +1,24 @@
+#product{
+    width: 20vw;
+    height: 25vh;
+    border-radius: 9px;
+    border: 2px dashed var(--coral);
+}
+  #product-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    gap:9px;
+}
+  .product-option{
+    border: 1px solid var(--coral);
+    border-radius: 5px;
+    padding:2px;
+    font-size: var(--sm);
+}
+  #product > img{
+    width:200px;
+    height:150px;
+    object-fit: cover;
+}

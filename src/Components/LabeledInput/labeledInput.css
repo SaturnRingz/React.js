@@ -1,0 +1,14 @@
+.labeled-input{
+    align-self:center;
+    width: 80%;
+    height: 3,5vh;
+    color: var(--blue);
+    font-weight: 500;
+  }
+  
+  .register-input{
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--coral);
+    border-radius: 55px;
+  }

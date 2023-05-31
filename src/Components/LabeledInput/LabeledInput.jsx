@@ -1,3 +1,5 @@
+import "./labeledInput.css"
+
 function LabeledInput({ label, type, control, register, errors, rules }) {
   return (
     <>

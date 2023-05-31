@@ -1,10 +1,10 @@
-import { useForm } from "react-hook-form";
-import { createUser } from "../Services/userServices";
-import LabeledInput from "./LabeledInput";
 import { useState } from "react";
-import Alert from "./Alert";
-import LoadButton from "./LoadButton";
-import { registerMessage } from "../Utils/errorMessages";
+import { useForm } from "react-hook-form";
+import { createUser } from "../../Services/userServices";
+import { registerMessage } from "../../Utils/errorMessages";
+import Alert from "../Alert/Alert";
+import LabeledInput from "../LabeledInput/LabeledInput";
+import LoadButton from "../LoadButton/LoadButton";
 
 function RegisterForm() {
   const {
@@ -24,6 +24,7 @@ function RegisterForm() {
     setLoading(true);
     try {
       const user = await createUser(data);
+      console.log(user);
       setAlert({
         text: "Tu cuenta ha sido creada exitosamente",
         variant: "alert-success-msg",

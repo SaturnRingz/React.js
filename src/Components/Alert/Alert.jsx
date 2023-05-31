@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import "./alert.css"
 function Alert({ variant, text, duration = 0, link }) {
 
   const navigate = useNavigate("");

@@ -5,9 +5,9 @@ import {
   updateProduct,
   getById,
   deleteProduct,
-} from "../Services/productServices";
-import LabeledInput from "./LabeledInput";
-import LoadingScreen from "./LoadingScreen";
+} from "../../Services/productServices";
+import LabeledInput from "../LabeledInput/LabeledInput";
+import LoadingScreen from "../LoadingScreen/LoadingScreen";
 
 function ModifyProductForm() {
   const {

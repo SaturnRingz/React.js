@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "./navBarOptions.css"
 export default function NavbarOptions({context}) {
   return (
     <ul id="navbar-options">

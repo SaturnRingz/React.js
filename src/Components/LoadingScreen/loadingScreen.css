@@ -1,0 +1,13 @@
+#loading_screen{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#002a5b8c
+  }
+  #loading_screen>img{
+    max-width: 100px;
+    animation: spin 3s linear infinite;  
+  }

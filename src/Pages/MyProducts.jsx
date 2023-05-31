@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import LoadingScreen from "../Components/LoadingScreen";
-import Product from "../Components/Product";
+import LoadingScreen from "../Components/LoadingScreen/LoadingScreen";
+import Product from "../Components/Product/Product";
 import { AuthContext } from "../Context/authContext";
 import { getProductsByUserId } from "../Services/productServices";
 

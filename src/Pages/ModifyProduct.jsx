@@ -1,4 +1,4 @@
-import ModifyProductForm from "../Components/ModifyProductForm";
+import ModifyProductForm from "../Components/ModifyProductForm/ModifyProductForm";
 
 function ModifyProduct() {
   return (

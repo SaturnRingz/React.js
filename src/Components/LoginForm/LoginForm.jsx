@@ -3,12 +3,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 //services
-import { login } from "../Services/userServices";
-import { loginMessage } from "../Utils/errorMessages";
+import { login } from "../../Services/userServices";
+import { loginMessage } from "../../Utils/errorMessages";
 //components
-import LabeledInput from "./LabeledInput";
-import LoadButton from "./LoadButton";
-import Alert from "./Alert";
+import LabeledInput from "../LabeledInput/LabeledInput";
+import LoadButton from "../LoadButton/LoadButton";
+import Alert from "../Alert/Alert";
+import "./loginForm.css"
 
 function LoginForm({context}) {
   const navigate = useNavigate();

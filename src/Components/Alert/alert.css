@@ -1,0 +1,10 @@
+#alert-error-msg{
+    align-self: center;
+    font-size: var(--sm);
+    color: red;
+  }
+  #alert-success-msg{
+    align-self: center;
+    font-size: var(--sm);
+    color: green;
+  }

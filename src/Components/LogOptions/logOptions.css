@@ -1,0 +1,14 @@
+.login-options a:hover {text-decoration: underline;}
+
+.login-options{
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+.login-options>button{
+  margin-top:0.4375rem;
+  border:none;
+  background-color:rgba(255, 255, 255, 0);
+  font-weight: 500;
+}
