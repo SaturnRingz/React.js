@@ -18,5 +18,11 @@ export async function login(email, password) {
   const responseUser = await firebase
     .auth()
     .signInWithEmailAndPassword(email, password);
-  return responseUser.user.uid;
+  if(responseUser.user.uid){
+    const userDocument = await firebase.firestore().collection("users")
+    .where("uid","==",responseUser.user.uid)
+    .get();
+    return userDocument.docs[0].data();
+  }
+  return {}
 }
