@@ -10,6 +10,12 @@ export async function getProductsByUserId(uid){
     .get();
 }
 
+export async function getProductsByName(search){
+  return await firebase.firestore().collection("products")
+    .where("title","==",search)
+    .get();
+}
+
 export async function createProduct(payload, user) {
   return await firebase.firestore().collection("products").add({
     title: payload.title,
