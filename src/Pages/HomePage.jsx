@@ -1,11 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import LoadingScreen from "../Components/LoadingScreen";
 import SearchBar from "../Components/SearchBar";
 import Product from "../Components/Product";
 import { getAllProducts } from "../Services/productServices";
+import { AuthContext } from "../Context/authContext";
 
-function HomePage({ isLoggedIn }) {
+function HomePage() {
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Cargando productos...");
   const [products, setProducts] = useState([]);
@@ -29,6 +30,9 @@ function HomePage({ isLoggedIn }) {
     const value = event.target.value;
     setSearch(value);
   };
+
+  const context = React.useContext(AuthContext);
+
   return (
     <LoadingScreen loading={loading}>
       <p id="product-line-title">{title}</p>
@@ -41,7 +45,7 @@ function HomePage({ isLoggedIn }) {
             alt={`productImage${product.id}`}
             id={product.id}
             title={product.data().title}
-            isLoggedIn={isLoggedIn}
+            context={context}
           />
         ))}
       </div>

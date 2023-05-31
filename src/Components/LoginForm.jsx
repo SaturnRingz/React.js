@@ -25,7 +25,7 @@ function LoginForm({context}) {
       setLoading(true);
       const userLogin = await login(data.email, data.password);
       navigate("/");
-      context.handleLogin(true);
+      context.handleLogin(userLogin);
       setLoading(false);
     } catch (e) {
       setLoading(true);

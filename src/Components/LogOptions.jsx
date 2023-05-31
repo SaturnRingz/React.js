@@ -5,6 +5,7 @@ function LogOptions({context}) {
     <>
       {context.login && (
         <div className="login-options">
+          <p>¡Qué bueno verte por aquí {context.user.name}!</p>
           <Link onClick={context.handleLogOut}>Cerrar sesión</Link>
         </div>
       )}
