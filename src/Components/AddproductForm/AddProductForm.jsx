@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import { createProduct } from "../../Services/productServices";
 import LabeledInput from "../LabeledInput/LabeledInput";
-import React from "react";
+import React, { useState } from "react";
 import { AuthContext } from "../../Context/authContext";
-
+import LoadButton from "../LoadButton/LoadButton"
+import { useNavigate } from "react-router-dom";
 function AddProductForm() {
 
   const {
@@ -13,19 +14,27 @@ function AddProductForm() {
   } = useForm({ mode: "onSubmit" });
 
   const context = React.useContext(AuthContext);
+  const navigate=useNavigate();
 
   const onSubmit = async (data) => {
+    setLoading(true);
     const userData = await context.user;
     try {
       const document = await createProduct(data, userData);
       console.log(document);
+      navigate("/my_products")
+      setLoading(false);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
   };
+
+  const[loading, setLoading] = useState(false);
+
   return (
     <>
-      <div className="register-bubble">
+      <div id="form-bubble">
         <form id="register-form" onSubmit={handleSubmit(onSubmit)}>
           <h1>Carga de producto</h1>
           <LabeledInput
@@ -60,9 +69,7 @@ function AddProductForm() {
             rules={{ required: true }}
             errors={errors}
           />
-          <button className="register-button" type="submit">
-            Guardar
-          </button>
+          <LoadButton text="Guardar" loading={loading}/>
         </form>
       </div>
     </>
