@@ -10,6 +10,7 @@ import NavBar from "./Components/NavBar";
 import Disclaimer from "./Components/Disclaimer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AuthProvider from "./Context/authContext";
+import MyProducts from "./Pages/MyProducts";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/product/add" element={<AddProduct />} />
             <Route path="/product/:id/edit" element={<ModifyProduct />} />
-            {/*<Route path="/:user_id/my_products"/> ---> proxima pagina de mis productos*/}
+            <Route path="/my_products" element={<MyProducts />}/>
           </Routes>
           <Disclaimer />
         </AuthProvider>
