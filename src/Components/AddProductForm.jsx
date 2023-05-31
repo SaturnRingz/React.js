@@ -3,7 +3,9 @@ import { createProduct } from "../Services/productServices";
 import LabeledInput from "../Components/LabeledInput";
 import React from "react";
 import { AuthContext } from "../Context/authContext";
+
 function AddProductForm() {
+
   const {
     register,
     handleSubmit,
