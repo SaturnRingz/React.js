@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Product({ id, title, imgUrl, alt, price, context }) {
+function Product({ id, title, imgUrl, alt, price, context, product_owner}) {
   return (
     <>
       <button id="product">
@@ -11,7 +11,7 @@ function Product({ id, title, imgUrl, alt, price, context }) {
           <Link className="product-option" to={`/product/${id}`}>
             Detalles
           </Link>
-          {context.login && (
+          {context.user.uid===product_owner &&(
             <Link className="product-option" to={`/product/edit/${id}`}>
               Modificar
             </Link>
