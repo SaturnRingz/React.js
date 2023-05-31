@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import LoadingScreen from "../Components/LoadingScreen";
-import SearchBar from "../Components/SearchBar";
 import Product from "../Components/Product";
-import { getAllProducts } from "../Services/productServices";
+import { getAllProducts} from "../Services/productServices";
 import { AuthContext } from "../Context/authContext";
 
 function HomePage() {
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Cargando productos...");
   const [products, setProducts] = useState([]);
-  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const request = async () => {
       try {
-        const querySnapshot = await getAllProducts(search);
+        const querySnapshot = await getAllProducts();
         setProducts(querySnapshot.docs);
         setTitle("Línea de productos");
         setLoading(false);
@@ -24,19 +22,13 @@ function HomePage() {
       }
     };
     request();
-  }, [search]);
-
-  const handleChange = (event) => {
-    const value = event.target.value;
-    setSearch(value);
-  };
+  }, []);
 
   const context = React.useContext(AuthContext);
 
   return (
     <LoadingScreen loading={loading}>
       <p id="product-line-title">{title}</p>
-      <SearchBar value={search} onChange={handleChange} />
       <div id="home-content">
         {products.map((product) => (
           <Product
