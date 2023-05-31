@@ -7,7 +7,9 @@ export async function getAllProducts(search) {
     ).then(res => res.json()); */
   return await firebase.firestore().collection("products").get();
 }
-
+/*
+export async function getProductsPerUser(){} ---> para la página 'mis productos'
+*/
 export async function createProduct(payload) {
   return await firebase.firestore().collection("products").add({
     title: payload.title,

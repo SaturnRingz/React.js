@@ -19,12 +19,13 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<HomePage/>} />
+            <Route path="/*" element={<NotFoundPage />} />
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
-            <Route path="/product/add" element={<AddProduct />} />
-            <Route path="/product/edit/:id" element={<ModifyProduct />} />
-            <Route path="/*" element={<NotFoundPage />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/product/add" element={<AddProduct />} />
+            <Route path="/product/:id/edit" element={<ModifyProduct />} />
+            {/*<Route path="/:user_id/my_products"/> ---> proxima pagina de mis productos*/}
           </Routes>
           <Disclaimer />
         </AuthProvider>
