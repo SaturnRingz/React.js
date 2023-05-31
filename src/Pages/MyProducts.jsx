@@ -39,6 +39,7 @@ function MyProducts() {
             id={product.id}
             title={product.data().title}
             context={context}
+            product_owner={product.data().owner_id}
           />
         ))}
       </div>
