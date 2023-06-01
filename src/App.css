@@ -21,6 +21,10 @@ h1{
   margin-top:3% 0 3% 0;
 }
 
+h2,h4{
+  margin: 0;
+}
+
 body{
 background-color: var(--blue);
 height: 100vh;
@@ -36,13 +40,6 @@ html, body {
 a{
   color: var(--coral);
   text-decoration: none;
-}
-
-button>a>img{
-  width:50%;
-  aspect-ratio: 3/2;
-  object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
 hr{
@@ -157,7 +154,7 @@ input[type=number] {
 .button{
   align-self: center;
   width: 50%;
-  height: 40px;
+  height: 0;
   border-radius: 55px;
   border: none;
   background-color: var(--blue);
