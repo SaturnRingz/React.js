@@ -34,3 +34,7 @@
     border: none;
     cursor:pointer;
   }
+
+  .dropdown{
+    align-self: center;
+  }
