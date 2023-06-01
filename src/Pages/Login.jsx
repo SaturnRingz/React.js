@@ -6,11 +6,7 @@ function Login() {
   const context=useContext(AuthContext);
   return (
     <>
-      <div className="login-content">
-        <div className="login-bubble">
-          <LoginForm context={context} />
-        </div>
-      </div>
+      <LoginForm context={context} />
     </>
   );
 }

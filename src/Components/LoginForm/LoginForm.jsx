@@ -9,9 +9,9 @@ import { loginMessage } from "../../Utils/errorMessages";
 import LabeledInput from "../LabeledInput/LabeledInput";
 import LoadButton from "../LoadButton/LoadButton";
 import Alert from "../Alert/Alert";
-import "./loginForm.css"
+import "./loginForm.css";
 
-function LoginForm({context}) {
+function LoginForm({ context }) {
   const navigate = useNavigate();
   const {
     register,
@@ -39,28 +39,29 @@ function LoginForm({context}) {
   };
 
   return (
-    <><div id="form-bubble">
-      <form id="login-form" onSubmit={handleSubmit(onSubmit)}>
-        <LabeledInput
-          label="Correo electrónico"
-          type="text"
-          control="email"
-          register={register}
-          errors={errors}
-          rules={{ required: true }}
-        />
-        <LabeledInput
-          label="Contraseña"
-          type="password"
-          control="password"
-          register={register}
-          errors={errors}
-          rules={{ required: true }}
-        />
-        <Alert text={alert.text} variant={alert.variant} />
-        <LoadButton text="Iniciar sesión" loading={loading} />
-      </form>
-    </div>
+    <>
+      <div className="login-container">
+        <form id="form" className="login-form" onSubmit={handleSubmit(onSubmit)}>
+          <LabeledInput
+            label="Correo electrónico"
+            type="text"
+            control="email"
+            register={register}
+            errors={errors}
+            rules={{ required: true }}
+          />
+          <LabeledInput
+            label="Contraseña"
+            type="password"
+            control="password"
+            register={register}
+            errors={errors}
+            rules={{ required: true }}
+          />
+          <Alert text={alert.text} variant={alert.variant} />
+          <LoadButton text="Iniciar sesión" loading={loading} />
+        </form>
+      </div>
     </>
   );
 }
