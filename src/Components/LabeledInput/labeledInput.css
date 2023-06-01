@@ -4,6 +4,7 @@
     height: 3,5vh;
     color: var(--blue);
     font-weight: 500;
+    margin:0 0 2.5vh 0;
   }
   
   .register-input{
