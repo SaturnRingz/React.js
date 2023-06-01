@@ -1,13 +1,14 @@
 import { Link} from "react-router-dom";
 import "./logOptions.css"
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
+
 function LogOptions({context}) {
   return (
     <>
       {context.login && (
-        <div className="login-options">
-          <p>¡Qué bueno verte por aquí {context.user.name}!</p>
-          <Link onClick={context.handleLogOut}>Cerrar sesión</Link>
-        </div>
+        <DropDownMenu title={context.user.name}>
+          <Link to="/" onClick={context.handleLogOut}>Cerrar sesión</Link>
+        </DropDownMenu>
       )}
       {!context.login && (<div className="login-options">
           <Link to="/login">Iniciar Sesión</Link>
