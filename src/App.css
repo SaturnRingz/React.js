@@ -97,35 +97,6 @@ input[type=number] {
   width:auto;
 }
 
-.login-content{
-  width: 100vw;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.login-bubble{
-  border: 3px dashed var(--coral);
-  border-radius: 55px;
-  background-color: var(--dark-bone);
-  width: min(70vw - 5px, 750px);
-  height: 30vh;
-  margin-inline: auto;
-}
-
-.login-button{
-  align-self: center;
-  font-size: var(--md);
-  border-radius: 55px;
-  border: none;
-  padding-bottom: 6px;
-  background-color: var(--blue);
-  color: var(--coral);
-  width: 25%;
-  cursor: pointer;
-}
-
 #error-msg{
   margin: 0;
   font-size: 11px;
@@ -154,7 +125,7 @@ input[type=number] {
 .button{
   align-self: center;
   width: 50%;
-  height: 0;
+  height: auto;
   border-radius: 55px;
   border: none;
   background-color: var(--blue);
