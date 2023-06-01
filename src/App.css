@@ -18,7 +18,7 @@ h1{
   align-self: center;
   font-size: var(--lg);
   color: var(--blue);
-  margin-bottom:0;
+  margin-top:3% 0 3% 0;
 }
 
 body{
@@ -117,19 +117,6 @@ input[type=number] {
   margin-inline: auto;
 }
 
-.register-button{
-  align-self: center;
-  width: 50%;
-  height: 40px;
-  border-radius: 55px;
-  border: none;
-  background-color: var(--blue);
-  color: var(--coral);
-  font-size: var(--md);
-  cursor:pointer;
-  padding-bottom: 3px;
-}
-
 .login-button{
   align-self: center;
   font-size: var(--md);
@@ -154,4 +141,28 @@ input[type=number] {
   justify-content: center;
   align-items: center;
   height: 84.5%;
+}
+
+#form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: min(70vw - 5px, 650px);
+  height: auto;
+  border: 3px dashed var(--coral);
+  border-radius: 55px;
+  background-color: var(--dark-bone);
+}
+
+.button{
+  align-self: center;
+  width: 50%;
+  height: 40px;
+  border-radius: 55px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--coral);
+  font-size: var(--md);
+  cursor:pointer;
+  padding-bottom: 3px;
 }
