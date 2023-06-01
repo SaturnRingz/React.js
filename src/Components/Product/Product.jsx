@@ -12,7 +12,7 @@ function Product({ id, title, imgUrl, alt, price, context, product_owner}) {
             Detalles
           </Link>
           {context.login && context.user.uid===product_owner &&(
-            <Link className="product-option" to={`/product/edit/${id}`}>
+            <Link className="product-option" to={`/product/${id}/edit`}>
               Modificar
             </Link>
           )}
