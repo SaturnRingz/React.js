@@ -6,7 +6,7 @@ function LogOptions({context}) {
   return (
     <>
       {context.login && (
-        <DropDownMenu title={context.user.name}>
+        <DropDownMenu title={`${context.user.name} ${context.user.lastName}`}>
           <Link to="/" onClick={context.handleLogOut}>Cerrar sesión</Link>
         </DropDownMenu>
       )}
