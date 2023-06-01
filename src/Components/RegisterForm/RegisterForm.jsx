@@ -78,7 +78,7 @@ function RegisterForm() {
             errors={errors}
           />
           <LabeledInput
-            label="Password"
+            label="Contraseña"
             type="password"
             control="password"
             register={register}
