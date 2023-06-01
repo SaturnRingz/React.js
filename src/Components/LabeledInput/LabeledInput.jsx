@@ -19,7 +19,7 @@ function LabeledInput({ label, type, control, register, errors, rules }) {
               <p id="error-msg">La contraseña es muy corta</p>
             )}
             {errors[control].type === "maxLength" && (
-              <p id="error-msg">La contraseña es demasiado larga</p>
+              <p id="error-msg">Demasiado largo</p>
             )}
           </span>
         )}
