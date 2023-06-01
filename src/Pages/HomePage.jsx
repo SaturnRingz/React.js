@@ -37,6 +37,7 @@ function HomePage() {
             alt={`productImage${product.id}`}
             id={product.id}
             title={product.data().title}
+            price={product.data().price}
             context={context}
           />
         ))}
