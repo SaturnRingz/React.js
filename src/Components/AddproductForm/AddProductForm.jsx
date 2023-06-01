@@ -42,7 +42,7 @@ function AddProductForm() {
             type="text"
             control="title"
             register={register}
-            rules={{ required: true }}
+            rules={{ required: true, maxLength:30 }}
             errors={errors}
           />
           <LabeledInput
