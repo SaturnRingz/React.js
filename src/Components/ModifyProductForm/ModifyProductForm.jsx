@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   updateProduct,
   getById,
@@ -8,6 +8,8 @@ import {
 } from "../../Services/productServices";
 import LabeledInput from "../LabeledInput/LabeledInput";
 import LoadingScreen from "../LoadingScreen/LoadingScreen";
+import LoadButton from "../LoadButton/LoadButton"
+import DeleteButton from "../DeleteButton/DeleteButton"
 
 function ModifyProductForm() {
   const {
@@ -16,8 +18,12 @@ function ModifyProductForm() {
     setValue,
     formState: { errors },
   } = useForm({ mode: "onChange" });
+
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
+  const [load, setLoad] = useState(false);
+  const [deletion, setDeletion] = useState(false);
+  const navigate=useNavigate();
 
   useEffect(() => {
     const result = async () => {
@@ -27,6 +33,7 @@ function ModifyProductForm() {
         setValue("price", response.data().price);
         setValue("thumbnail", response.data().thumbnail);
         setValue("details", response.data().details);
+        setValue("owner_id", response.data().owner_id);
         setLoading(false);
       } catch (e) {
         console.log(e);
@@ -36,22 +43,35 @@ function ModifyProductForm() {
   }, [id, setValue]);
 
   const handleDelete = async () => {
+    setDeletion(true);
     try {
       const response = await deleteProduct(id);
       console.log(response);
+      navigate("/my_products");
+      setDeletion(false);
     } catch (e) {
       console.log(e);
+      setDeletion(false);
+    }
+  };
+
+  const handleUpdate = async (data) => {
+    setLoad(true);
+    try {
+      const document = await updateProduct(id, data);
+      console.log(document);
+      setLoad(false);
+      navigate("/my_products");
+    } catch (e) {
+      console.log(e);
+      setLoad(false);
     }
   };
 
   const onSubmit = async (data) => {
-    try {
-      const document = await updateProduct(id, data);
-      console.log(document);
-    } catch (e) {
-      console.log(e);
-    }
+    deletion?handleDelete():handleUpdate(data);
   };
+
   return (
     <>
       <LoadingScreen loading={loading}>
@@ -90,12 +110,8 @@ function ModifyProductForm() {
               rules={{ required: true }}
               errors={errors}
             />
-            <button className="register-button" type="submit">
-              Guardar
-            </button>
-            <Link className="register-button" onClick={handleDelete} to="/">
-              Eliminar
-            </Link>
+            <LoadButton text="Guardar" loading={load}/>
+            <DeleteButton onClick={handleDelete} text="Eliminar" loading={deletion}/>
           </form>
         </div>
       </LoadingScreen>
