@@ -35,7 +35,7 @@ function AddProductForm() {
   return (
     <>
       <div id="form-bubble">
-        <form id="register-form" onSubmit={handleSubmit(onSubmit)}>
+        <form id="form" onSubmit={handleSubmit(onSubmit)}>
           <h1>Carga de producto</h1>
           <LabeledInput
             label="Nombre del producto"
