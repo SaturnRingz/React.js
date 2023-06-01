@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./navBarOptions.css"
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
 export default function NavbarOptions({context}) {
   return (
     <ul id="navbar-options">
@@ -14,13 +15,10 @@ export default function NavbarOptions({context}) {
       </li>
       {context.login && (
         <li>
-          <div className="dropdown">
-            <button className="dropbtn">Productos▼</button>
-            <div className="dropdown-content">
+          <DropDownMenu>
               <Link to="/product/add">Agregar producto</Link>
               <Link to="/my_products">Mis productos</Link>
-            </div>
-          </div>
+          </DropDownMenu>
         </li>
       )}
     </ul>
