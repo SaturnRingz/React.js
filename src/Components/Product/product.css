@@ -1,8 +1,15 @@
 #product{
-    width: 20vw;
-    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 20vw;
+    max-height: 15vw;
     border-radius: 9px;
     border: 2px dashed var(--coral);
+    background-color:var(--bone);
+    gap:22px;
 }
   #product-options{
     display: flex;
@@ -18,7 +25,8 @@
     font-size: var(--sm);
 }
   #product > img{
-    width:200px;
-    height:150px;
+    width:50%;
+    aspect-ratio: 3/2;
     object-fit: cover;
+    mix-blend-mode: multiply;
 }
