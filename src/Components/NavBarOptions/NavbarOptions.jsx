@@ -15,7 +15,7 @@ export default function NavbarOptions({context}) {
       </li>
       {context.login && (
         <li>
-          <DropDownMenu>
+          <DropDownMenu title="Productos▼">
               <Link to="/product/add">Agregar producto</Link>
               <Link to="/my_products">Mis productos</Link>
           </DropDownMenu>
